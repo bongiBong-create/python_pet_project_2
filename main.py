@@ -1,16 +1,17 @@
-# This is a sample Python script.
+import random
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+hidden_number = random.randint(1, 5)
+counter = 0
+flag = True
 
+while flag:
+    client_number = int(input("Угадайте число "))
+    counter += 1
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    if client_number > hidden_number:
+        print("Загаданное число меньше.")
+    elif client_number < hidden_number:
+        print("Загаданное число больше.")
+    else:
+        print(f"Поздравляем! Вы угадали число за {counter} попыток")
+        flag = False
